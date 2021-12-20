@@ -1,0 +1,126 @@
+#editUser {
+    padding: 20px;
+}
+
+#formEditUser {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+}
+
+#editUser .info {
+    display: inline-table;
+    width: 350px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+    border-radius: 8px;
+
+    margin: 10px 10px;
+}
+
+#editUser .picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#editUser .picture-background {
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+}
+
+#editUser .picture-background .picture-color {
+    border-radius: 100px;
+    overflow: hidden;
+    background-color: #C4C4C4;
+}
+
+#editUser .picture-background img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+#editUser .picture-background #pictureField {
+    display: none;
+}
+
+#editUser .picture-background .material-icons {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    margin-left: 30px;
+    margin-bottom: 20px;
+
+    font-size: 40px; 
+}
+
+#editUser .picture-background .material-icons:hover {
+    cursor: pointer;
+}
+
+#editUser span {
+    font-size: 18px;
+}
+
+#editUser .fields {
+    display: flex;
+    flex-direction: column;
+}
+
+#editUser .title {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+
+    margin-top: 5px;
+}
+
+#editUser .fields input, #editUser .fields select {
+    outline: none;
+    
+    border-radius: 8px;
+    border: 1px solid #BFBFBF;
+
+    font-size: 16px;
+    padding: 2px 5px;
+}
+
+#editUser input:focus, #editUser .fields select:focus {
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+    border: 1px solid #25BAFA;
+}
+
+#editUser .fields option:hover {
+    border: 1px solid #25BAFA;
+    color: white;
+}
+
+#editUser .fields span {
+    color: red;
+    font-size: 12px;
+    opacity: 0;
+}
+
+#editUser .input-icon {
+    position: relative;
+}
+
+#editUser .input-icon input {
+    width: 245px;
+    padding-left: 25px;
+}
+
+#editUser .input-icon i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 3px;
+    z-index: 1;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#editUser .input-icon input:focus ~ i {
+    color: #25BAFA;
+}

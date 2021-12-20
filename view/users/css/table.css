@@ -1,0 +1,60 @@
+#bgTable {
+    display: block;
+    height:auto;
+    
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    
+    min-width: 900px;
+    border-radius: 10px;
+}
+
+#bgTable table { 
+    border-collapse: collapse; 
+    width: 100%;
+}
+
+#bgTable th {
+    text-align: left;
+}
+
+#bgTable td {
+    color: #404040;
+}
+
+#bgTable tr {
+    border-bottom: var(--default-border-bottom);
+    height: 35px;
+}
+
+#bgTable .type-user {
+    width: 170px;
+}
+
+#bgTable .last-access {
+    width: 250px;
+}
+
+#bgTable .icon {
+    width: 45px;
+    height: 35px;
+}
+
+#bgTable span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bgTable button:hover {
+    cursor: pointer;
+}

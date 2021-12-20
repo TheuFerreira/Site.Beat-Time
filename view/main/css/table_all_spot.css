@@ -1,0 +1,39 @@
+#bgTableAllSpot {
+    display: block;
+    height:auto;
+    
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+
+    padding-bottom: 30px;
+    
+    border-radius: 10px;
+    width: 100%;
+}
+
+#bgTableAllSpot table { 
+    border-collapse: collapse; 
+
+    width: 100%;
+}
+
+#bgTableAllSpot th {
+    text-align: left;
+}
+
+#bgTableSpot td {
+    color: #404040;
+}
+
+#bgTableAllSpot tr {
+    border-bottom: 1px solid #BFBFBF;
+    height: 35px;
+}
+
+
+#bgTableAllSpot .icon {
+    width: 45px;
+    height: 35px;
+}

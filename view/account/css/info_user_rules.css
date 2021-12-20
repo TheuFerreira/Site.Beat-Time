@@ -1,0 +1,75 @@
+/* Full Name */
+#editUser #fullName:not(:focus):not(:placeholder-shown):invalid ~ #fullNameError {
+    opacity: 1;
+}
+
+#editUser #fullName:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+/* CPF */
+#editUser #cpf:not(:focus):not(:placeholder-shown):invalid ~ #cpfError {
+    opacity: 1;
+}
+
+#editUser #cpf:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+/* Birth Date */
+#editUser #birthDate:not(:focus):not(:placeholder-shown):invalid ~ #birthDateError {
+    opacity: 1;
+}
+
+#editUser #birthDate:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+/* Gender */
+#editUser #gender:not(:focus):not(:placeholder-shown):invalid ~ #genderError {
+    opacity: 1;
+}
+
+#editUser #gender:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+/* User Name */
+#editUser #userName:not(:focus):not(:placeholder-shown):invalid ~ #userNameError {
+    opacity: 1;
+}
+    
+#editUser #userName:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+/* Password */
+#editUser #password:not(:focus):not(:placeholder-shown):invalid ~ #passwordError {
+    opacity: 1;
+}
+
+#editUser #password:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+/* Repeat Password */
+#editUser #repeatPassword:not(:focus):not(:placeholder-shown):invalid ~ #repeatPasswordError {
+    opacity: 1;
+}
+
+#editUser #repeatPassword:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+/* Salary */
+#editUser #salary:not(:focus):not(:placeholder-shown):invalid ~ #salaryError {
+    opacity: 1;
+}
+
+#editUser #salary:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+#editUser #salary:not(:focus):not(:placeholder-shown):invalid ~ i {
+    color: red;
+}

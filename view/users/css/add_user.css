@@ -1,0 +1,148 @@
+#addUser {
+    transform: scale(0);
+    -webkit-transition: transform 0.1s ease;
+    -moz-transition: transform 0.1s ease;
+    -o-transition: transform 0.1s ease;
+    transition: transform 0.1s;
+}
+
+#addUser .container {
+    background-color: white;
+    border-radius: 8px;
+    width: 1000px;
+}
+
+#addUser .info-container {
+    display: inline-table;
+}
+
+#addUser .column {
+    display: flex;
+    flex-direction: column;
+}
+
+#addUser #title {
+    height: 50px;
+
+    font-size: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addUser .info {
+    display: inline-table;
+    width: 280px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+    border-radius: 8px;
+
+    margin: 10px 10px;
+}
+
+#addUser span {
+    font-size: 18px;
+}
+
+#addUser .fields {
+    display: flex;
+    flex-direction: column;
+}
+
+#addUser .title {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+
+    margin-top: 5px;
+}
+
+#addUser .fields input, #addUser .fields select {
+    outline: none;
+    
+    border-radius: 8px;
+    border: 1px solid #BFBFBF;
+
+    font-size: 16px;
+    padding: 2px 5px;
+}
+
+#addUser input:focus, #addUser .fields select:focus {
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+    border: 1px solid #25BAFA;
+}
+
+#addUser .fields option:hover {
+    border: 1px solid #25BAFA;
+    color: white;
+}
+
+#addUser .fields span {
+    color: red;
+    font-size: 12px;
+    opacity: 0;
+}
+
+#addUser .input-icon {
+    position: relative;
+}
+
+#addUser .input-icon input {
+    width: 245px;
+    padding-left: 25px;
+}
+
+#addUser .input-icon i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 3px;
+    z-index: 1;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#addUser .input-icon input:focus ~ i {
+    color: #25BAFA;
+}
+
+a {
+    all: unset;
+}
+
+button {
+    all: unset;
+}
+
+.buttons {
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+    background-color: #cecece6b;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.buttons button {
+    margin-right: 15px;
+    padding: 10px 30px;
+    min-width: 50px;
+
+    text-align: center;
+    
+    border-radius: 20px;
+    background-color: white;
+}
+
+.buttons button:last-child {
+    margin-right: 25px;
+
+    background-color: #25BAFA;
+    color: white;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+}

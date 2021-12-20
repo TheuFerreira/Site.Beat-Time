@@ -1,0 +1,53 @@
+#infoDialog {
+    transform: scale(0);
+    -webkit-transition: transform 0.1s ease;
+    -moz-transition: transform 0.1s ease;
+    -o-transition: transform 0.1s ease;
+    transition: transform 0.1s;
+}
+
+#infoDialog .container {
+    border-radius: 8px;
+}
+
+#infoDialog .title {
+    height: 50px;
+
+    font-size: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#infoDialog .info {
+    box-shadow: var(--default-box-shadow);
+    border-radius: 8px;
+    display: inline-table;
+
+    margin: 10px 10px;
+    padding: 15px;
+}
+
+#infoDialog .info-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#infoDialog span {
+    color: #6C6C6C;
+    font-size: 14px;
+}
+
+#infoDialog p {
+    margin-bottom: 10px;
+}
+
+#infoDialog p:last-child {
+    margin-bottom: 0px;
+}
+
+#infoDialog .info-picture {
+    width: 150px;
+    height: 150px;
+}

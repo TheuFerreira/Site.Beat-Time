@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BeatTime - Usuários</title>
+
+    <link rel="stylesheet" href="view/shared/css/default.css">
+    <link rel="stylesheet" href="./view/shared/menu/menu.css">
+    <link rel="stylesheet" href="./view/users/css/controls.css">
+    <link rel="stylesheet" href="./view/users/css/add_user.css">
+    <link rel="stylesheet" href="./view/users/css/add_user_rules.css">
+    <link rel="stylesheet" href="./view/users/css/table.css">
+    <link rel="stylesheet" href="./view/users/css/info_dialog.css">
+    <link rel="stylesheet" href="view/shared/question_dialog/question_dialog.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">    
+</head>
+<body>
+
+    <div id="panelMenu"></div>
+
+    <div id="controls">
+        <a href="principal.html">
+            <span class="material-icons">west</span>
+            <span>Voltar para Página Inicial</span>
+        </a>
+
+        <button id="btnNewUser">Novo Usuário</button>
+    </div>
+
+    <div class="container" id="bgTable">
+        <table id="table">
+            <tr>
+                <th class="icon"></th>
+                <th class="type-user">Tipo de Usuário</th>
+                <th>Nome</th>
+                <th>Contato</th>
+                <th class="last-access">Último Acesso</th>
+                <th class="icon"></th>
+                <th class="icon"></th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="popup" id="addUser">
+        <div class="container">
+            <div>
+                <span id="title">Cadastrar Usuário</span>
+            </div>
+
+            <form method="post" id="formAddUser">
+                <div class="info">
+                    <span>Informações Pessoais</span>
+                    
+                    <div class="fields">
+                        <label class="title" for="fullName">Nome Completo</label>
+                        <input type="text" class="input" id="fullName" name="full_name" required>
+                        <span id="fullNameError">Insira o Nome Completo</span>
+    
+                        <label class="title" for="cpf">CPF</label>
+                        <input type="text" class="input" id="cpf" name="cpf" data-mask="000.000.000-00" required>
+                        <span id="cpfError">Insira um CPF válido</span>
+    
+                        <label class="title" for="birthDate">Data de Nascimento</label>
+                        <input type="date" class="input" id="birthDate" name="birth_date" required>
+                        <span id="birthDateError">Insira a Data de Nascimento</span>
+                        
+                        <label class="title" for="gender">Gênero</label>
+                        <input type="text" class="input" id="gender" name="gender" required>
+                        <span id="genderError">Insira um Gênero</span>
+                    </div>
+                </div>
+                <div class="info-container">
+                    <div class="column">
+                        <div class="info">
+                            <span>Informações de Contato</span> 
+        
+                            <div class="fields">
+                                <label class="title" for="email">E-mail</label>
+                                <input type="email" class="input" id="email" name="email">
+            
+                                <label class="title" for="telephone">Telefone</label>
+                                <input type="text" class="input" id="telephone" name="telephone" data-mask="(00) 0000-0000">
+            
+                                <label class="title" for="cellphone">Celular</label>
+                                <input type="text" class="input" id="cellphone" name="cellphone" data-mask="(00) 00000-0000">
+                                <span id="contactError">Insira uma Forma de Contato</span>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <span>Informações Adicionais</span> 
+        
+                            <div class="fields">
+                                <label class="title" for="typeUser">Tipo de Usuário</label>
+                                <select name="type_user" id="typeUser">
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Usuário</option>
+                                </select>
+                          
+                                <label class="title" for="salary">Salário</label>
+                                <div class="input-icon">
+                                    <input type="number" class="input" name="salary" id="salary" required>
+                                    <i class="material-icons">attach_money</i>
+                                    <span id="salaryError">Insira o Salário</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <span>Informações de Login</span> 
+
+                    <div class="fields">
+                        <label class="title" for="user_name">Nome de Usuário</label>
+                        <input type="text" class="input" id="userName" name="user_name" required>
+                        <span id="userNameError"></span>
+
+                        <label class="title" for="password">Senha</label>
+                        <input type="password" class="input" id="password" name="password" autocomplete="none" required>
+                        <span id="passwordError">Insira a Senha</span>
+
+                        <label class="title" for="repeatPassword">Repetir Senha</label>
+                        <input type="password" class="input" id="repeatPassword" autocomplete="none" required>
+                        <span id="repeatPasswordError">As senhas não coincidem</span>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" id="btnCancelAddUser">Cancelar</button>
+                    <button type="submit">Confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup" id="questionDialog">
+        <div class="container">
+            <div id="info">
+                <div class="title">
+                    <span class="material-icons">warning</span>
+                    <span id="popupTitle"></span>
+                </div>
+                <p id="popupDescription"></p>
+            </div>
+            <div class="buttons">
+                <button id="yesQuestionDialog">Sim</button>
+                <button id="noQuestionDialog">Não</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="infoDialog">
+        <div class="container">
+            <div class="title">Informações do Usuário</div>
+
+            <div class="info">
+                <div class="info-title">Informações Pessoais</div>
+
+                <span>Nome Completo</span>
+                <p id="infoFullName"></p>
+
+                <span>CPF</span>
+                <p id="infoCPF"></p>
+
+                <span>Data de Nascimento</span>
+                <p id="infoBirthDate"></p>
+
+                <span>Gênero</span>
+                <p id="infoGender"></p>
+            </div>
+            <div class="info">
+                <div class="info-title">Informações de Contato</div>
+
+                <span>E-mail</span>
+                <p id="infoEmail"></p>
+
+                <span>Telefone</span>
+                <p id="infoTelephone"></p>
+
+                <span>Celular</span>
+                <p id="infoCellphone"></p>
+            </div>
+            <div class="info">
+                <div class="info-title">Informações Adicionais</div>
+
+                <span>Entrou em</span>
+                <p id="infoEntryDate"></p>
+
+                <span>Total de Horas Trabalhadas</span>
+                <p id="infoHours"></p>
+
+                <span>Salário</span>
+                <p id="infoSalary"></p>
+            </div>
+
+            <div class="buttons">
+                <button id="closeInfoDialog">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="view/users/js/default.js"></script>
+    <script type="module" src="view/shared/menu/menu.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+</body>
+</html>

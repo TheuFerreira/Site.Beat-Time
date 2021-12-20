@@ -1,0 +1,122 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #160840;
+}
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg .container {
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+    border-radius: 16px;
+
+    padding: 15px;
+    min-width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg .title {
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg form {
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.bg form .error {
+    color: red;
+    font-size: 12px;
+    display: none;
+
+    margin-bottom: 10px;
+}
+
+.bg form label {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.bg form .input-icon {
+    position: relative;
+}
+
+.bg form input {
+    outline: none;
+    
+    border: 1px solid #BFBFBF;
+    border-radius: 8px;
+    
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 2px 5px;
+    padding-left: 30px;
+    
+    width: 90%;
+}
+
+.bg form input:hover {
+    border: 1px solid #25BAFA;
+}
+
+.bg form input:focus {
+    border: 1px solid #25BAFA;
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+}
+
+.bg form .material-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin-top: 3px;
+    margin-left: 3px;
+
+    color: #BFBFBF;
+}
+
+.bg form input:hover ~ .material-icons {
+    color: #25BAFA;
+}
+
+.bg form input:focus ~ .material-icons {
+    color: #25BAFA;
+}
+
+.bg form button {
+    all: unset;
+
+    text-align: center;
+    padding: 10px 30px;
+
+    color: white;
+    background-color: #25BAFA;
+
+    border-radius: 20px;
+}
+
+.bg form button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+}

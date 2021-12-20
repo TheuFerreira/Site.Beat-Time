@@ -1,0 +1,50 @@
+#controls {
+    height: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#controls a {
+    all: unset;
+
+    height: 30px;
+    color: #6C6C6C;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+}
+
+#controls a:hover {
+    color: black;
+    cursor: pointer;
+}
+
+#controls span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#controls button {
+    all: unset;
+
+    height: 35px;
+    padding: 0px 30px;
+    
+    font-size: 14px;
+    text-align: center;
+    
+    border-radius: 20px;
+    background-color: #25BAFA;
+    color: white;
+}
+
+#controls button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(125, 125, 125, 0.5);
+}
