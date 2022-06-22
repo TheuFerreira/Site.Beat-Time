@@ -2,18 +2,24 @@
 
 class DAOUser {
 
-    public function login(string $userName, string $password) : array {
-        $sql = "SELECT u.file_name, u.cpf, u.full_name, tu.description  
-                FROM users AS u 
-                INNER JOIN type_user AS tu ON tu.id_type_user = u.id_type_user
-                WHERE u.user_name = ? 
-                    AND CAST(AES_DECRYPT(u.password, 'beattime2021') AS CHAR) = ?";
+    public function login(string $userName, string $password) {
+        $sql = "
+        SELECT u.cpf, u.full_name, tu.description  
+        FROM users AS u 
+        INNER JOIN type_user AS tu ON tu.id_type_user = u.id_type_user
+        WHERE u.user_name = ? 
+            AND CAST(AES_DECRYPT(u.password, 'beattime2021') AS CHAR) = ?
+        LIMIT 1;";
         $pds = Connection::getPreparedStatement($sql);
         $pds->bindValue(1, $userName);
         $pds->bindValue(2, $password);
         $pds->execute();
 
-        $result = $pds->fetchAll(PDO::FETCH_BOTH);
+        $result = $pds->fetch(PDO::FETCH_ASSOC);
+        if ($result == null) {
+            return null;
+        }
+        
         return $result;
     }
 
