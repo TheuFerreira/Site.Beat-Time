@@ -6,6 +6,7 @@ import './css/Body.min.css';
 import './css/Graph.min.css';
 import './css/TableAllSpot.min.css';
 import './css/TableSpot.min.css';
+import QuestionDialog from "../dialogs/question_dialog/QuestionDialog";
 
 export default function Home() {
 
@@ -89,7 +90,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div id="panelQuestionDialog"></div>
+            <QuestionDialog id='panelQuestionDialog'/>
 
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
