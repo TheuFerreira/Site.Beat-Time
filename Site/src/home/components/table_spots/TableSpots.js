@@ -1,16 +1,39 @@
-export default function RowSpots(props) {
+import { useEffect, useState } from "react";
+import './css/TableSpot.min.css';
 
-    const data = props.data;
+export default function TableSpots(props) {
 
-    return (
-        <tr>
-            <td className='icon'>
-                <span className='material-icons'>{ data.description === 'Entrada' ? 'login' : 'exit_to_app' }</span>
-            </td>
-            <td>{data.description}</td>
-            <td>{formatToFullStringDate(data.date)}</td>
-        </tr>
-    );
+    const [spots, setSpots] = useState([]);
+
+    const cpf = props.cpf;
+
+    useEffect(() => {
+        const data = {
+            'cpf': cpf
+        };
+
+        fetch('http://localhost/beat-time/API/routes/spots/get_all_by_cpf.php', {
+            method: 'POST',
+            body: JSON.stringify(data),
+        }).then(async (response) => {
+            const json = await response.json();
+            setSpots(json);
+        }).catch((error) => {
+            console.log(error);
+        });
+    }, [cpf]);
+
+    const rowTable = (data) => {
+        return (
+            <tr key={data}>
+                <td className='icon'>
+                    <span className='material-icons'>{ data.description === 'Entrada' ? 'login' : 'exit_to_app' }</span>
+                </td>
+                <td>{data.description}</td>
+                <td>{formatToFullStringDate(data.date)}</td>
+            </tr>
+        );
+    }
 
     function formatToFullStringDate(value) {
         const date = new Date(Date.parse(value));
@@ -55,4 +78,22 @@ export default function RowSpots(props) {
         const dateFormat = new Intl.DateTimeFormat("pt-BR", options);
         return dateFormat.format(date);
     }
+
+    return (
+        <div className="container" id="bgTableSpot">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th className="icon"></th>
+                        <th>Tipo</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    { spots.map((x) => rowTable(x)) }
+                </tbody>
+            </table>
+        </div>
+    );
 }

@@ -1,34 +1,16 @@
 import Menu from "../components/menu/Menu";
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import Context from '../Context/Context';
 import './css/Controls.min.css';
 import './css/Body.min.css';
 import './css/Graph.min.css';
-import './css/TableSpot.min.css';
 import QuestionDialog from "../dialogs/question_dialog/QuestionDialog";
-import RowSpots from "./components/row_spots/RowSpots";
 import TableAllSpots from "./components/table_all_spots/TableAllSpots";
+import TableSpots from './components/table_spots/TableSpots';
 
 export default function Home() {
 
     const [usuario] = useContext(Context);
-    const [spots, setSpots] = useState([]);
-
-    useEffect(() => {
-        const data = {
-            'cpf': usuario.cpf
-        };
-
-        fetch('http://localhost/beat-time/API/routes/spots/get_all_by_cpf.php', {
-            method: 'POST',
-            body: JSON.stringify(data),
-        }).then(async (response) => {
-            const json = await response.json();
-            setSpots(json);
-        }).catch((error) => {
-            console.log(error);
-        });
-    }, [usuario.cpf]);
 
     return (
         <div>
@@ -75,21 +57,7 @@ export default function Home() {
                     <TableAllSpots/>
                 </aside>
             
-                <div className="container" id="bgTableSpot">
-                    <table id="table">
-                        <thead>
-                            <tr>
-                                <th className="icon"></th>
-                                <th>Tipo</th>
-                                <th>Data</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            { spots.map((x) => <RowSpots data={x}/>) }
-                        </tbody>
-                    </table>
-                </div>
+                <TableSpots cpf={usuario.cpf}/>
             </div>
 
             <QuestionDialog id='panelQuestionDialog'/>
