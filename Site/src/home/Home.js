@@ -12,8 +12,6 @@ export default function Home() {
 
     const [usuario] = useContext(Context);
 
-    console.log(usuario);
-
     return (
         <div>
             <link rel="stylesheet" href="view/shared/question_dialog/question_dialog.css"/>
@@ -60,11 +58,13 @@ export default function Home() {
                         <div className="container">
                             <div id="bgTableAllSpot">
                                 <table id="tableAll">
-                                    <tr>
-                                        <th className="icon"></th>
-                                        <th>Nome</th>
-                                        <th>Horas Trabalhadas</th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th className="icon"></th>
+                                            <th>Nome</th>
+                                            <th>Horas Trabalhadas</th>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </div>
 
@@ -81,11 +81,13 @@ export default function Home() {
             
                 <div className="container" id="bgTableSpot">
                     <table id="table">
-                        <tr>
-                            <th className="icon"></th>
-                            <th>Tipo</th>
-                            <th>Data</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th className="icon"></th>
+                                <th>Tipo</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
                     </table>
                 </div>
             </div>
