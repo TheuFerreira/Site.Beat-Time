@@ -108,6 +108,7 @@ END $$
 DELIMITER ;
 
 DELIMITER $$
+SET GLOBAL log_bin_trust_function_creators = 1;
 CREATE FUNCTION sumTimeOfUserByWeek(cpf BIGINT(11), startDate DATETIME, endDate DATETIME)
 RETURNS INT
 BEGIN
