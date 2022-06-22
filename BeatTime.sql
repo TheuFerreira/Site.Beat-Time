@@ -12,7 +12,6 @@ INSERT INTO type_user (description) VALUES('Administrador'), ('Usuário');
 CREATE TABLE users(
 cpf BIGINT(11) NOT NULL PRIMARY KEY,
 id_type_user INT NOT NULL,
-file_name BLOB NULL,
 full_name VARCHAR(200) NOT NULL,
 birth_date DATETIME NOT NULL,
 gender VARCHAR(20) NOT NULL,

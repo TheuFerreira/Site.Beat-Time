@@ -1,5 +1,5 @@
 import Menu from "../components/menu/Menu";
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Context from '../Context/Context';
 import './css/Controls.min.css';
 import './css/Body.min.css';
@@ -7,10 +7,29 @@ import './css/Graph.min.css';
 import './css/TableAllSpot.min.css';
 import './css/TableSpot.min.css';
 import QuestionDialog from "../dialogs/question_dialog/QuestionDialog";
+import RowSpots from "./components/row_spots/RowSpots";
 
 export default function Home() {
 
     const [usuario] = useContext(Context);
+    const [spots, setSpots] = useState([]);
+
+    useEffect(() => {
+
+        const data = {
+            'cpf': usuario.cpf
+        };
+
+        fetch('http://localhost/beat-time/API/routes/spots/get_all_by_cpf.php', {
+            method: 'POST',
+            body: JSON.stringify(data),
+        }).then(async (response) => {
+            const json = await response.json();
+            setSpots(json);
+        }).catch((error) => {
+            console.log(error);
+        });
+    }, [usuario.cpf]);
 
     return (
         <div>
@@ -65,6 +84,8 @@ export default function Home() {
                                             <th>Horas Trabalhadas</th>
                                         </tr>
                                     </thead>
+
+                                    
                                 </table>
                             </div>
 
@@ -88,6 +109,10 @@ export default function Home() {
                                 <th>Data</th>
                             </tr>
                         </thead>
+
+                        <tbody>
+                            { spots.map((x) => <RowSpots data={x}/>) }
+                        </tbody>
                     </table>
                 </div>
             </div>
