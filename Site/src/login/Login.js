@@ -2,7 +2,8 @@ import './css/Login.min.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import Context from '../Context/Context';
 
 const schema = Yup
     .object()
@@ -14,6 +15,7 @@ const schema = Yup
 
 export default function Login() {
 
+    const [, setUsuario] = useContext(Context);
     const [error, setError] = useState('');
 
     const { 
@@ -46,14 +48,7 @@ export default function Login() {
         }
 
         setError('');
-
-        console.log(result);
-        /*
-        const data = response[0];
-        await setUser(data);
-
-        window.location.href = "principal.html";
-        */
+        setUsuario(result);
     }
 
     return (
