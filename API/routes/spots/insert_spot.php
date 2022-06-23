@@ -1,11 +1,17 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
+header("Access-Control-Allow-Methods: GET, POST, DELETE");
+
 require '../../database/dao/Connection.php';
 require '../../database/dao/DAOSpot.php';
 require '../../database/model/Spot.php';
 
-$cpf = $_POST['cpf'];
-$date = $_POST['date'];
-$typeSpot = $_POST['type_spot'];
+$data = json_decode(file_get_contents('php://input'), true);
+
+$cpf = $data['cpf'];
+$date = $data['date'];
+$typeSpot = $data['type_spot'];
 
 $spot = new Spot();
 $spot->setDate($date);
